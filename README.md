@@ -1,6 +1,6 @@
 # GL-INET-6416A wifipineapple NANO V1.1.3
 
- #Add netgear-WNDR4300 tetra support 1.1.2
+#Add netgear-WNDR4300 tetra support 1.1.2
 
  ## Update to 1.1.3
 
