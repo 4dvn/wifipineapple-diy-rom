@@ -10,7 +10,7 @@
 
  ## WNDR4300 Fully Available
 
- ## files folders support gl-inet by default.
+ ## Files folders support gl-inet by default.
 
  ## Add source code, default 720N make menuconfig yourself if necessary
 
