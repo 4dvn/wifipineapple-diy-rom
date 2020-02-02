@@ -1,42 +1,42 @@
 # GL-INET-6416A wifipineapple NANO V1.1.3
 
-#添加 netgear-WNDR4300 tetra支持 1.1.2
+ #Add netgear-WNDR4300 tetra support 1.1.2
 
-##Update to 1.1.3
+ ## Update to 1.1.3
 
-##Source 和 file 是针对tetra的 如果不需要建议下载releases。
+ ## Source and file are for tetra. If not needed, download the releases.
 
-##openwrt-ar71xx-generic-wifipineapplenano-* 是针对TP-LINK MR10U MR11U MR12U MR13U 703N MR3020 MR3040  改过16M/64M，联想PWR-G60（这个就是大淘宝网上买的非原厂wifipineapple，有SD卡插槽。）<br>也可以使用。都是单网口的。不用启用双网卡支持
+ ## openwrt-ar71xx-generic-wifipineapplenano- * is for TP-LINK MR10U MR11U MR12U MR13U 703N MR3020 MR3040 changed 16M / 64M, Lenovo PWR-G60 (this is a non-original wifipineapple bought on Taobao online, with SD card inserted  Slot.) <br> can also be used.  All are single network ports.  No need to enable dual network card support
 
-##WNDR4300 完全可用
+ ## WNDR4300 Fully Available
 
-##files文件夹默认是支持gl-inet的。
+ ## files folders support gl-inet by default.
 
-##添加源代码，默认720N如有需要自己make menuconfig
+ ## Add source code, default 720N make menuconfig yourself if necessary
 
-###其次，720N专用需要各位自己解决lan端口问题。只要在配置文件里面稍微修改就可以使用双网口了。不是什么大问题，我就懒得改了。
+ ### Secondly, 720N dedicated needs you to solve the lan port problem by yourself.  As long as the configuration file is slightly modified, dual network ports can be used.  It's not a big problem, and I'm too lazy to change it.
 
-##扩展说明。
-<pre>
-mkdir -p /mnt/sda2<br>
-mount /dev/sda2 /mnt/sda2<br>
-mkdir -p /tmp/cproot<br>
-mount --bind / /tmp/cproot<br>
-tar -C /tmp/cproot -cvf - . | tar -C /mnt/sda2 -xf -<br>
-umount /tmp/cproot<br>
-umount /mnt/sda2<br>
-</pre>
-vi /etc/config/fstab //添加如下<br>
-<pre>
-config 'mount'<br>
-       option target '/'<br>
-       option device '/dev/sda2'<br>
-       option fstype 'ext4'<br>
-       option options 'rw,sync'<br>
-       option enabled '1'<br>
-       option enabled_fsck '0'<br>
+ ## Extended description.
+ <pre>
+ mkdir -p / mnt / sda2 <br>
+ mount / dev / sda2 / mnt / sda2 <br>
+ mkdir -p / tmp / cproot <br>
+ mount --bind / / tmp / cproot <br>
+ tar -C / tmp / cproot -cvf-. | tar -C / mnt / sda2 -xf-<br>
+ umount / tmp / cproot <br>
+ umount / mnt / sda2 <br>
+ </ pre>
+ vi / etc / config / fstab // Add the following <br>
+ <pre>
+ config 'mount' <br>
+        option target '/' <br>
+        option device '/ dev / sda2' <br>
+        option fstype 'ext4' <br>
+        option options 'rw, sync' <br>
+        option enabled '1' <br>
+        option enabled_fsck '0' <br>
 
-config 'swap'<br>
-       option device '/dev/sda1'<br>
-       option enabled '1'<br>
-</pre>
+ config 'swap' <br>
+        option device '/ dev / sda1' <br>
+        option enabled '1' <br>
+ </ pre>
